@@ -9,9 +9,12 @@
         <ul class="navbar-nav">
           <% if current_user %>
             <li class="nav-item">
+              <%= link_to '+ Add Photo', photos_new_path, class: "nav-link"%>
+            </li>
+            <li class="nav-item">
               <%=link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")%>
             </li>
-          <% else %>
+            <% else %>
             <li class="nav-item">
               <%= link_to('Sign in', new_user_session_path, class: "nav-link") %>
             </li>
