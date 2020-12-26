@@ -1,7 +1,16 @@
 <div class="row text-center mt-5">
   <% if @user %>
     <h1>Hello <%= @user.username %></h1>
+    <% @user.photos.each do |pic| %>
+      <% if   pic.image.attached? %>
+        <%= image_tag pic.image.variant(resize_to_fill: [200, 200, { gravity: 'North' }]), style: 'height: 100%;width: auto;' %>
+        <p><%= pic.description %></p>
+      <% end %>
+    <% end %>
   <% else %>
     <h1>Hello World!</h1>
+    <% @photos.each do |pic| %>
+      <%= image_tag pic.image.variant(resize_to_fill: [100, 100, { gravity: 'North' }]), style: 'height: 100%;width: auto;', class: "home_photo" %>
+    <% end %>
   <% end %>
 </div>

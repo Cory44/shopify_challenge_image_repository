@@ -7,12 +7,16 @@ class PhotosController < ApplicationController
   end
 
   def create
-    photo = Photo.create!(photo_params)
+    # photo = Photo.create!(photo_params)
+    description = photo_params[:description]
+    tags = photo_params[:tags].split(/\s*,\s*/)
+    image = photo_params[:image]
+    photo = Photo.create!(user: current_user, description: description, tags: tags, image: image)
     redirect_to root_path
   end
 
   private
-    def user_params
-      params.require(:photo).permit(:description, :tags, :image)
+    def photo_params
+      params.require(:photo).permit(:user, :description, :tags, :image)
     end
 end
