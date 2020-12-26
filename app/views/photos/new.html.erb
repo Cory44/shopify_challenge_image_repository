@@ -3,10 +3,10 @@
 <div class="row">
   <div class="col-4 offset-4">
     <%= bootstrap_form_for(@photo, url: create_path) do |f| %>
-    <%= f.text_field :description, wrapper: { class: 'mt-5', data: {}}%>
+    <%= f.text_area :description, wrapper: { class: 'mt-5', data: {}}%>
     <%= f.text_field :tags, wrapper: { class: 'mt-3', data: {}}%>
     <%= f.file_field :image, multiple: true, direct_upload: true, wrapper: { class: 'mt-3', data: {}}%>
-    <%= f.submit "Log In", class: 'actions mt-3' %>
+    <%= f.submit "Log In", class: 'actions mt-3 btn btn-primary' %>
     <% end %>
   </div>
 </div>

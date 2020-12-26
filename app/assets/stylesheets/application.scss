@@ -16,3 +16,22 @@
 
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+
+header {
+  background-color: $indigo-200 !important;
+}
+
+.link {
+  text-decoration: none;
+  color: $indigo-500
+}
+
+$mynewcolor: $indigo-200;
+
+.btn-primary {
+    @include button-variant($indigo-200, $indigo-300, $hover-background: $indigo-300, $hover-border: $indigo-400, $active-background: $indigo-100, $active-border: $indigo-200);
+}
+
+// .btn-outline-primary {
+//     @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
+// }

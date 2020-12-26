@@ -6,7 +6,7 @@
     <%= f.text_field :username, wrapper: { class: 'field mt-5', data: {}} %>
     <%= f.password_field :password, wrapper: { class: 'field mt-3', data: {}}, label: "Password (6 characters minimum)" %>
     <%= f.password_field :password_confirmation, wrapper_class: "field mt-3" %>
-    <%= f.submit "Sign up", class: 'actions mt-3' %>
+    <%= f.submit "Sign up", class: 'actions mt-3 btn btn-primary' %>
     <% end %>
     <div class="mt-3">
       <%= render "devise/shared/links" %>
