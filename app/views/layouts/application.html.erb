@@ -13,8 +13,13 @@
 <body>
   <%= render 'layouts/nav' %>
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+    <div class="notice alert alert-primary mt-3 col-md-4 offset-md-4 col-12"><%= notice %></div>
+    <% end %>
+
+    <% if alert %>
+    <div class="alert alert alert-danger mt-3 col-md-4 offset-md-4 col-12"><%= alert %></div>
+    <% end%>
     <%= yield %>
   </div>
 </body>
