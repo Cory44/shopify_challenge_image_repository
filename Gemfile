@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 5.0.0.alpha3'
+gem "bootstrap_form", "~> 4.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
