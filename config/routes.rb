@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/:id', to: 'user#show', as: 'user_show'
   get 'home/index'
   get 'photos/index'
   get 'photos/new'
