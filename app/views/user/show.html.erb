@@ -2,8 +2,8 @@
 <div class="row mt-5">
     <% @user.photos.each do |pic| %>
       <% if pic.image.attached? %>
-        <div class="col-md-4 col-12 p-2 m-2">
-          <%= image_tag pic.image, style: 'width: 100%;margin: 1rem' %>
+        <div class="col-md-4 col-12">
+          <%= image_tag pic.image, style: 'width: 100%;padding: 1rem' %>
           <p><%= pic.description %></p>
         </div>
       <% end %>

@@ -1,7 +1,7 @@
 <h2 class="text-center mt-5">Add Photo</h2>
 
 <div class="row">
-  <div class="col-4 offset-4">
+  <div class="col-md-4 offset-md-4 col-12">
     <%= bootstrap_form_for(@photo, url: create_path) do |f| %>
     <%= f.text_area :description, wrapper: { class: 'mt-5', data: {}}%>
     <%= f.text_field :tags, wrapper: { class: 'mt-3', data: {}}%>
