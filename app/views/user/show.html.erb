@@ -1,5 +1,6 @@
 <h1 class="mt-5 text-center"><%= @user.username.capitalize %></h1>
 <div class="row mt-5">
+  <% if @user == @current_user %>
     <% @user.photos.each do |pic| %>
       <% if pic.image.attached? %>
         <div class="col-md-4 col-12">
@@ -8,4 +9,14 @@
         </div>
       <% end %>
     <% end %>
+  <% else %>
+    <% @user.photos.each do |pic| %>
+      <% if pic.image.attached? && !pic.private %>
+        <div class="col-md-4 col-12">
+          <%= image_tag pic.image, style: 'width: 100%;padding: 1rem' %>
+          <p><%= pic.description %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
