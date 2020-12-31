@@ -3,7 +3,17 @@
 <div class="row">
   <div class="col-md-4 offset-md-4 col-12">
     <%= bootstrap_form_for(@photo, url: create_path) do |f| %>
-      <%= f.file_field :image, multiple: false, direct_upload: false, wrapper: { class: 'mt-3', data: {}}%>
+
+      <div class='form-block_container mt-3'>
+        <div class='form-block_input'>
+          <div class='form-block_avatar_file'>
+            <div class='file_droparea'>
+              <p class='file_msg js-set-number'>Choose your photo or drag them here</p>
+              <%= f.file_field :image, hide_label: true, class: "file_input", type: :file, multiple: false %>
+            </div>
+          </div>
+        </div>
+      </div>
       <%= f.text_field :tags, wrapper: { class: 'mt-3', data: {}}%>
       <%= f.text_area :description, wrapper: { class: 'mt-3', data: {}}%>
       <%= f.form_group :private, class: "mt-3" do %>
