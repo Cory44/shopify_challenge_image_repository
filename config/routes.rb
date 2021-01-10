@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'photos/index'
   get 'photos/new'
   post 'photos/new', to: 'photos#create', as: 'create'
+  get 'album/new'
+  post 'album/new', to: 'album#create', as: 'create_album'
 
   devise_for :users
 

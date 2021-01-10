@@ -1,22 +1,24 @@
-<h1 class="mt-5 text-center"><%= @user.username.capitalize %></h1>
+<h1 class="text-center mt-5"><%= @user.username.capitalize %></h1>
 <div class="row mt-5">
-  <% if @user == @current_user %>
-    <% @user.photos.each do |pic| %>
-      <% if pic.image.attached? %>
-        <div class="col-md-4 col-12">
-          <%= image_tag pic.image, style: 'width: 100%;padding: 1rem' %>
-          <p><%= pic.description %></p>
-        </div>
+  <div class="col-md-6 offset-md-3 col-12">
+    <div class="row">
+      <% if @user == @current_user %>
+        <% @user.photos.each do |pic| %>
+          <% if pic.image.attached? %>
+            <div class="col-4 p-0 p-md-1">
+              <%= image_tag pic.image, style: 'width: 100%;' %>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @user.photos.each do |pic| %>
+          <% if pic.image.attached? && !pic.private %>
+            <div class="col-4 p-0 p-md-1">
+              <%= image_tag pic.image, style: 'width: 100%;padding: 1rem' %>
+            </div>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% else %>
-    <% @user.photos.each do |pic| %>
-      <% if pic.image.attached? && !pic.private %>
-        <div class="col-md-4 col-12">
-          <%= image_tag pic.image, style: 'width: 100%;padding: 1rem' %>
-          <p><%= pic.description %></p>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>

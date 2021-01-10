@@ -9,6 +9,9 @@
         <ul class="navbar-nav">
           <% if current_user %>
             <li class="nav-item">
+              <%= link_to '+ Add Album', album_new_path, class: "nav-link"%>
+            </li>
+            <li class="nav-item">
               <%= link_to '+ Add Photo', photos_new_path, class: "nav-link"%>
             </li>
             <li class="nav-item">
