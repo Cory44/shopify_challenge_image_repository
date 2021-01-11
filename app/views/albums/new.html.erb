@@ -1,1 +1,26 @@
-<h1>Hello Woerld!</h1>
+<h2 class="text-center mt-5">Add Photo</h2>
+
+<div class="row">
+  <div class="col-md-4 offset-md-4 col-12">
+    <%= bootstrap_form_for(@album, url: create_album_path) do |f| %>
+
+      <div class='form-block_container mt-3'>
+        <div class='form-block_input'>
+          <div class='form-block_avatar_file'>
+            <div class='file_droparea'>
+              <p class='file_msg js-set-number'>Choose your photos or drag them here</p>
+              <%= f.file_field :images, hide_label: true, class: "file_input", type: :file, multiple: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.text_field :name, wrapper: { class: 'mt-3', data: {}}%>
+      <%= f.text_field :tags, wrapper: { class: 'mt-3', data: {}}%>
+      <%= f.form_group :private, class: "mt-3" do %>
+        <%= f.radio_button :private, true, label: "Private", label_class: "whiteClass", value: true, inline: true %>
+        <%= f.radio_button :private, false, label: "Public", label_class: "whiteClass", value: false, inline: true, checked: true %>
+      <% end %>
+      <%= f.submit "Create Album", class: 'actions mt-3 btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

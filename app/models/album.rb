@@ -11,6 +11,9 @@
 #  updated_at :datetime         not null
 #
 class Album < ApplicationRecord
+  attr_accessor :images
   belongs_to :user
   has_and_belongs_to_many :photos
+
+
 end

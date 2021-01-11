@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'photos/index'
   get 'photos/new'
-  post 'photos/new', to: 'photos#create', as: 'create'
+  post 'photos/new', to: 'photos#create', as: 'create_photo'
   get 'albums/new'
   post 'albums/new', to: 'albums#create', as: 'create_album'
 

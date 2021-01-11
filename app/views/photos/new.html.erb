@@ -2,13 +2,13 @@
 
 <div class="row">
   <div class="col-md-4 offset-md-4 col-12">
-    <%= bootstrap_form_for(@photo, url: create_path) do |f| %>
+    <%= bootstrap_form_for(@photo, url: create_photo_path) do |f| %>
 
       <div class='form-block_container mt-3'>
         <div class='form-block_input'>
           <div class='form-block_avatar_file'>
             <div class='file_droparea'>
-              <p class='file_msg js-set-number'>Choose your photo or drag them here</p>
+              <p class='file_msg js-set-number'>Choose your photo or drag it here</p>
               <%= f.file_field :image, hide_label: true, class: "file_input", type: :file, multiple: false %>
             </div>
           </div>
