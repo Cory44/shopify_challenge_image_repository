@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'user/:id', to: 'user#show', as: 'user_show'
+  get 'users/:id', to: 'users#show', as: 'user_show'
   get 'home/index'
   get 'photos/index'
   get 'photos/new'
   post 'photos/new', to: 'photos#create', as: 'create'
-  get 'album/new'
-  post 'album/new', to: 'album#create', as: 'create_album'
+  get 'albums/new'
+  post 'albums/new', to: 'albums#create', as: 'create_album'
 
   devise_for :users
 

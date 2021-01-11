@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def show
     puts params
     @user=User.find_by id: params[:id]
