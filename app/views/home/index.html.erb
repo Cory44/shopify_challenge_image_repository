@@ -8,12 +8,28 @@
       <% end %>
     <% end %>
   <% else %>
-    <% (0..1).each do |index| %>
-      <% if @photos[index].image.attached? && !@photos[index].private %>
-        <div class="col-1 p-0">
-          <%= image_tag @photos[index].image, style: 'width: 100%;', class: "home_photo" %>
+    <div class="col-md-4 d-none d-sm-none d-md-block">
+      <% (1..24).each do |row|%>
+        <div class="row">
+          <%= render layout: 'home/row', locals: {row: row, photos: @photos} do %><% end %>
         </div>
       <% end %>
-    <% end %>
+    </div>
+    <div class="col-12 col-md-4">
+      <h1 class="mt-5">Welcome</h1>
+      <div class="row mt-5">
+        <div class="col-5">
+          <p>Have an account?</p>
+          <%= link_to('Sign in', new_user_session_path, class: "btn btn-primary") %>
+        </div>
+        <div class="col-2">
+          <p>or</p>
+        </div>
+        <div class="col-5">
+          <p>Don't have an account?</p>
+          <%= link_to('Sign up', new_user_registration_path, class: "btn btn-primary") %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
