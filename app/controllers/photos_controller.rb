@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    redirect_to root_path
     description = photo_params[:description]
     tags = photo_params[:tags].split(/\s*,\s*/)
     image = photo_params[:image]
@@ -19,7 +20,6 @@ class PhotosController < ApplicationController
 
     photo = Photo.new(user: current_user, description: description, tags: tags, image: image, private: private_photo)
     photo.save()
-    redirect_to root_path
   end
 
   private

@@ -1,12 +1,18 @@
 <div class="row text-center">
   <% if @user %>
     <h1>Hello <%= @user.username %></h1>
-    <% @user.photos.each do |pic| %>
-      <% if   pic.image.attached? %>
-        <%= image_tag pic.image.variant(resize_to_fill: [200, 200, { gravity: 'North' }]), style: 'height: 100%;width: auto;' %>
-        <p><%= pic.description %></p>
-      <% end %>
-    <% end %>
+    <div class='col-md-6 offset-md-3 col-12 mt-5  '>
+      <div class="row">
+        <% @photos.each do |pic| %>
+          <% if pic.image.attached? %>
+            <div class='col-4 p-0 p-0 p-md-1 mb-5'>
+              <%= image_tag pic.image, style: 'width: 100%;' %>
+              <%= link_to '@' + pic.user.username.capitalize, user_show_path(pic.user), class: "mt-1 text-secondary" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <% else %>
     <div class="col-md-4 d-none d-sm-none d-md-block">
       <% (1..24).each do |row|%>
