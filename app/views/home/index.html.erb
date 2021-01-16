@@ -1,12 +1,12 @@
 <div class="row text-center">
   <% if @user %>
-    <h1>Hello <%= @user.username %></h1>
+    <h1 class="mt-5">PhotoBook</h1>
     <div class='col-md-6 offset-md-3 col-12 mt-5  '>
       <div class="row">
         <% @photos.each do |pic| %>
           <% if pic.image.attached? %>
             <div class='col-4 p-0 p-0 p-md-1 mb-5'>
-              <%= image_tag pic.image, style: 'width: 100%;' %>
+              <%= link_to(image_tag(pic.image, style: 'width: 100%;'), photo_show_path(pic)) %>
               <%= link_to '@' + pic.user.username.capitalize, user_show_path(pic.user), class: "mt-1 text-secondary" %>
             </div>
           <% end %>

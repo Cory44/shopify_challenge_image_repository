@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-4 offset-md-2 col-12">
+    <%= image_tag @photo.image, style: 'width: 100%;', class: 'mt-5' %>
+  </div>
+  <div class="col-md-4 col-12 mt-5">
+    <h3><%= link_to '@' + @photo.user.username.capitalize, user_show_path(@photo.user), class: "mt-1 text-secondary" %></h3>
+    <% if @photo.albums.size > 0 %>
+      <p class="mt-3">Album: <%= @photo.albums.first.name %></p>
+    <% else %>
+      <p class="mt-3">Description: <%= @photo.description %></p>
+    <% end %>
+    <p class="mt-3">Tags: <%= @photo.tags %></p>
+  </div>
+</div>

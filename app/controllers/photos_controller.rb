@@ -22,6 +22,10 @@ class PhotosController < ApplicationController
     photo.save()
   end
 
+  def show
+    @photo = Photo.find_by id: params[:id]
+  end
+
   private
     def photo_params
       params.require(:photo).permit(:user, :description, :tags, :image, :private)

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'photos/new', to: 'photos#create', as: 'create_photo'
   get 'albums/new'
   post 'albums/new', to: 'albums#create', as: 'create_album'
+  get 'photo/:id', to: 'photos#show', as: 'photo_show'
 
   devise_for :users
 
