@@ -29,6 +29,8 @@
 /unsamples
 /unsamples/*
 
+node_modules/
+
 # Everything added here was beucase I found a general rails gitignore at
 # https://github.com/github/gitignore/blob/master/Rails.gitignore
 # and just pasted it below....
