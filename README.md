@@ -1,24 +1,15 @@
-# README
+# Shopify Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an image repository I have created for the Shopify Challenge for the 2021 Summer Internship
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Features
+ - User authentication
+ - Public or private uploads
+ - Individual photo upload
+ - Album upload with multiple photos
+## Home page with dynamic mosaic of public images
+![Home page](app/assets/images/home.png)
+## User timeline of other users public images
+![User View](app/assets/images/user.png)
+## Image upload page
+![upload page](app/assets/images/upload.png)
